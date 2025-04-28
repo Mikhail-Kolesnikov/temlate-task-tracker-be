@@ -3,12 +3,10 @@ package de.upteams.tasktracker.task.entity;
 import de.upteams.tasktracker.collaborator.entity.Collaborator;
 import de.upteams.tasktracker.project.entity.Project;
 import de.upteams.tasktracker.utils.BaseEntity;
-import de.upteams.tasktracker.validation.ValidationConstants;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,31 +27,14 @@ import static de.upteams.tasktracker.utils.EntityUtil.getIdsForToString;
 @NoArgsConstructor
 public class Task extends BaseEntity {
 
-    @NotBlank(message = "{task.title.notBlank}")
-    @Size(
-            min = ValidationConstants.TASK_TITLE_MIN_LENGTH,
-            max = ValidationConstants.TASK_TITLE_MAX_LENGTH,
-            message = "{task.title.size}"
-    )
     @Pattern(
-            regexp = ValidationConstants.TASK_TITLE_REGEX,
-            message = "{task.title.pattern}"
     )
-    @Column(name = "title", nullable = false)
     private String title;
 
-    @Size(
-            max = ValidationConstants.TASK_DESCRIPTION_MAX_LENGTH,
-            message = "{task.description.size}"
-    )
     @Pattern(
-            regexp = ValidationConstants.TASK_DESCRIPTION_REGEX,
-            message = "{task.description.pattern}"
     )
-    @Column(name = "description")
     private String description;
 
-    @NotNull(message = "{task.project.notNull}")
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
     private Project project;

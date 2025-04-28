@@ -2,7 +2,6 @@ spring:
   application:
     name: Task Tracker
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3307}/${DB_NAME:task_tracker}
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -56,10 +55,8 @@ digitalocean:
 #7 day = 10080min
 jwt:
   at:
-    live-in-min: ${JWT_AT_LIVE_IN_MIN:10}
     secret: ${JWT_AT_SECRET:eW91ci0yNTYtYml0LXNlY3JldC1mb3ItYWNjZXNzLXRva2VuLTAxMjM0NTY3ODlhYmNkZWY=}
   rt:
-    live-in-min: ${JWT_RT_LIVE_IN_MIN:1440}
     secret: ${JWT_RT_SECRET:eW91ci0yNTYtYml0LXNlY3JldC1mb3ItcmVmcmVzaC10b2tlbi1hYmNkZWYwMTIzNDU2Nzg5}
 
 springdoc:

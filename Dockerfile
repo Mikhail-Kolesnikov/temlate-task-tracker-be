@@ -6,7 +6,6 @@ LABEL stage=builder
 
 WORKDIR /workspace/app
 
-COPY . .
 
 RUN chmod +x gradlew
 
@@ -17,9 +16,7 @@ FROM gcr.io/distroless/java17-debian11:nonroot AS runtime
 
 WORKDIR /app
 
-COPY --from=builder /workspace/app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","/app/app.jar"]
-
