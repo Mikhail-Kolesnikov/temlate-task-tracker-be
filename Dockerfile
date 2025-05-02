@@ -14,12 +14,12 @@ COPY src src
 
 # === Runtime stage ===
 FROM gcr.io/distroless/java17-debian11:nonroot AS runtime
-LABEL stage=runtime
 
 WORKDIR /app
 
-COPY --from=builder /workspace/app/build/libs/tasktracker-0.0.1.jar app.jar
+COPY --from=builder /workspace/app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","/app/app.jar"]
+
