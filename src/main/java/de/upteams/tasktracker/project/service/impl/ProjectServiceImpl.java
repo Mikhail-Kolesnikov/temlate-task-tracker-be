@@ -8,6 +8,10 @@ import de.upteams.tasktracker.project.persistence.ProjectRepository;
 import de.upteams.tasktracker.project.service.interfaces.ProjectService;
 import de.upteams.tasktracker.project.utils.ProjectMapper;
 import de.upteams.tasktracker.user.entity.AppUser;
+<<<<<<< HEAD
+=======
+import de.upteams.tasktracker.user.service.UserService;
+>>>>>>> 260ae4d (Initial commit)
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,11 +28,21 @@ public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository repository;
     private final ProjectMapper mappingService;
+<<<<<<< HEAD
 
     @Override
     public ProjectDto save(ProjectCreateDto newProjectDto, AppUser projectOwner) {
         Project project = mappingService.mapDtoToEntity(newProjectDto);
         project.setOwner(projectOwner);
+=======
+    private final UserService userService;
+
+    @Override
+    public ProjectDto save(ProjectCreateDto newProjectDto, String email) {
+        Project project = mappingService.mapDtoToEntity(newProjectDto);
+        AppUser author = userService.getByEmailOrThrow(email);
+        project.setOwner(author);
+>>>>>>> 260ae4d (Initial commit)
         return mappingService.mapEntityToDto(repository.save(project));
     }
 

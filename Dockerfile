@@ -1,13 +1,18 @@
 # syntax = docker/dockerfile:1.4
 
+<<<<<<< HEAD
 ############################
 # 1) Build stage
 ############################
+=======
+# === Build stage ===
+>>>>>>> 260ae4d (Initial commit)
 FROM eclipse-temurin:17-jdk AS builder
 LABEL stage=builder
 
 WORKDIR /workspace/app
 
+<<<<<<< HEAD
 # 1.1) Copy only wrapper + build scripts to leverage cache
 COPY gradlew settings.gradle build.gradle ./
 COPY gradle/wrapper gradle/wrapper
@@ -44,3 +49,22 @@ EXPOSE 8080
 
 # 2.3) Запускаем приложение
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+=======
+COPY . .
+
+RUN chmod +x gradlew
+
+COPY src src
+
+# === Runtime stage ===
+FROM gcr.io/distroless/java17-debian11:nonroot AS runtime
+
+WORKDIR /app
+
+COPY --from=builder /workspace/app/build/libs/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app/app.jar"]
+
+>>>>>>> 260ae4d (Initial commit)
