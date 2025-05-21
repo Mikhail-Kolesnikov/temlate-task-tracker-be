@@ -4,6 +4,7 @@ import de.upteams.tasktracker.project.controller.api.ProjectApi;
 import de.upteams.tasktracker.project.dto.ProjectDto;
 import de.upteams.tasktracker.project.dto.request.ProjectCreateDto;
 import de.upteams.tasktracker.project.service.interfaces.ProjectService;
+import de.upteams.tasktracker.security.service.AuthUserDetails;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,8 +22,8 @@ public class ProjectController implements ProjectApi {
     }
 
     @Override
-    public ProjectDto save(ProjectCreateDto newProjectDto, String email) {
-        return service.save(newProjectDto, email);
+    public ProjectDto save(ProjectCreateDto newProjectDto, AuthUserDetails principal) {
+        return service.save(newProjectDto, principal.user());
     }
 
     @Override
