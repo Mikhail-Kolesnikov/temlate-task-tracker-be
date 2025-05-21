@@ -2,6 +2,7 @@ package de.upteams.tasktracker.project.controller.api;
 
 import de.upteams.tasktracker.project.dto.ProjectDto;
 import de.upteams.tasktracker.project.dto.request.ProjectCreateDto;
+import de.upteams.tasktracker.security.service.AuthUserDetails;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -40,7 +41,7 @@ public interface ProjectApi {
 
             @AuthenticationPrincipal
             @Parameter(hidden = true)
-            String email
+            AuthUserDetails principal
     );
 
     @Operation(summary = "Get Project", description = "Get one Project from the Database by its ID")
