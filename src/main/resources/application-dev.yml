@@ -59,9 +59,10 @@ jwt:
     live-in-min: ${JWT_AT_LIVE_IN_MIN:10}
     secret: ${JWT_AT_SECRET:eW91ci0yNTYtYml0LXNlY3JldC1mb3ItYWNjZXNzLXRva2VuLTAxMjM0NTY3ODlhYmNkZWY=}
   rt:
-    live-in-min: ${JWT_RT_LIVE_IIN_MIN:1440}
+    live-in-min: ${JWT_RT_LIVE_IN_MIN:1440}
     secret: ${JWT_RT_SECRET:eW91ci0yNTYtYml0LXNlY3JldC1mb3ItcmVmcmVzaC10b2tlbi1hYmNkZWYwMTIzNDU2Nzg5}
 
 springdoc:
   swagger-ui:
     with-credentials: true
+JWT_RT_LIVE_IN_MIN: 60
