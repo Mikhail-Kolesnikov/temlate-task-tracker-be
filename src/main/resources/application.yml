@@ -13,7 +13,7 @@ spring:
       ddl-auto: update
 
   mail:
-    username: ${EMAIL_MAILBOX}
+    username: ${EMAIL_USERNAME}
     password: ${EMAIL_PASSWORD}
     host: smtp.gmail.com
     port: 587
@@ -35,18 +35,18 @@ app:
 
 digitalocean:
   spaces:
-    access-key: ${DO_SPACES_ACCESS_KEY:}
-    secret-key: ${DO_SPACES_SECRET_KEY:}
+    access-key: ${DO_SPACES_ACCESS_KEY}
+    secret-key: ${DO_SPACES_SECRET_KEY}
     endpoint: ${DO_SPACES_ENDPOINT}
     region: ${DO_SPACES_REGION}
     bucket-name: ${DO_SPACES_BUCKET}
 
 jwt:
   at:
-    live-in-min: ${JWT_AT_LIVE_IIN_MIN}
+    live-in-min: ${JWT_AT_LIVE_IN_MIN}
     secret: ${JWT_AT_SECRET}
   rt:
-    live-in-min: ${JWT_RT_LIVE_IIN_MIN}
+    live-in-min: ${JWT_RT_LIVE_IN_MIN}
     secret: ${JWT_RT_SECRET}
 
 springdoc:
