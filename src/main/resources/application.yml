@@ -43,10 +43,10 @@ digitalocean:
 
 jwt:
   at:
-    live-in-min: ${JWT_AT_LIVE_IIN_MIN}
+    live-in-min: ${JWT_AT_LIVE_IN_MIN}
     secret: ${JWT_AT_SECRET}
   rt:
-    live-in-min: ${JWT_RT_LIVE_IIN_MIN}
+    live-in-min: ${JWT_RT_LIVE_IN_MIN}
     secret: ${JWT_RT_SECRET}
 
 springdoc:
