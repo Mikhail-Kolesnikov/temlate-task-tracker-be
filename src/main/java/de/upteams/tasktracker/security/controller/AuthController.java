@@ -38,13 +38,14 @@ public class AuthController implements AuthApi {
     }
 
     @Override
-    public TokenResponseDto refreshAccessToken(RefreshRequestDto request, HttpServletResponse response) {
-        final String newAccessToken = service.refreshAccessToken(request.getRefreshToken());
+    public TokenResponseDto refreshAccessToken(RefreshRequestDto refreshRequest, HttpServletResponse response) {
+        final String newAccessToken = service.refreshAccessToken(refreshRequest.getRefreshToken());
         final Cookie accessCookie = new Cookie(ACCESS_TOKEN_COOKIE, newAccessToken);
 
         response.addCookie(accessCookie);
-        return new TokenResponseDto(newAccessToken, request.getRefreshToken());
+        return new TokenResponseDto(newAccessToken, refreshRequest.getRefreshToken());
     }
+
 
     @Override
     public TokenResponseDto logout(HttpServletResponse response) {

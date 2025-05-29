@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/api/v1/auth")
 public interface AuthApi {
 
-    // ✅ Добавлено: описание метода входа в систему (login) и возможных ответов
+    //  Добавлено: описание метода входа в систему (login) и возможных ответов
     @Operation(summary = "Login", description = "User login process")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Authorization successfully completed"),
@@ -31,7 +31,7 @@ public interface AuthApi {
     })
     @PostMapping("/login")
     TokenResponseDto login(
-            // ✅ Описание тела запроса для Swagger
+            //  Описание тела запроса для Swagger
             @RequestBody(
                     required = true,
                     description = "Instance of User with name and password"
@@ -39,24 +39,31 @@ public interface AuthApi {
             @Valid
             LoginRequest loginRequest,
 
-            // ✅ Скрыт из Swagger UI — технический параметр
+            //  Скрыт из Swagger UI — технический параметр
             @Parameter(hidden = true)
             HttpServletResponse response
     );
 
-    // ✅ Метод получения нового access токена по refresh токену
+    //  Метод получения нового access токена по refresh токену
     @Operation(summary = "Get new access token", description = "Getting new access token by refresh token")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "New access token granted"),
             @ApiResponse(responseCode = "401", description = "Refresh token is invalid or expired")
     })
     @PostMapping("/refresh")
-    TokenResponseDto refresh(
-            // ✅ Описание тела запроса для Swagger
+    TokenResponseDto refreshAccessToken(
+            //  Описание тела запроса для Swagger
             @RequestBody(
                     required = true,
                     description = "Refresh token instance"
             )
-            RefreshRequestDto refreshRequest
+            RefreshRequestDto refreshRequest,
+            @Parameter(hidden = true)
+                    HttpServletResponse response
     );
+    @Operation(summary = "Logout", description = "User logout")
+    @ApiResponse(responseCode = "200", description = "User logged out successfully")
+    @PostMapping("/logout")
+    TokenResponseDto logout(@Parameter(hidden = true) HttpServletResponse response);
+
 }

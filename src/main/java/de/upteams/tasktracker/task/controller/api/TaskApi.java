@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// ✅ Добавлено: описание контроллера
+//  Добавлено: описание контроллера
 @Tag(name = "Task controller", description = "Controller for task-related operations")
 @PreAuthorize("isAuthenticated()")
 @RequestMapping("/api/v1/tasks")
 public interface TaskApi {
 
-    // ✅ Метод для создания задачи
+    //  Метод для создания задачи
     @Operation(summary = "Create Task", description = "Create a new task")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Task successfully created",
@@ -43,7 +43,7 @@ public interface TaskApi {
             AuthUserDetails principal
     );
 
-    // ✅ Метод для получения задачи по ID
+    //  Метод для получения задачи по ID
     @Operation(summary = "Get Task by ID", description = "Retrieve a task by its ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Task found",
@@ -61,7 +61,7 @@ public interface TaskApi {
             AuthUserDetails principal
     );
 
-    // ✅ Метод для получения всех задач по projectId
+    //  Метод для получения всех задач по projectId
     @Operation(summary = "Get Tasks for Project", description = "Retrieve all tasks by project ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "List of tasks returned")
@@ -77,7 +77,7 @@ public interface TaskApi {
             AuthUserDetails principal
     );
 
-    // ✅ Метод для обновления задачи
+    //  Метод для обновления задачи
     @Operation(summary = "Update Task", description = "Update an existing task")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Task successfully updated"),
@@ -96,7 +96,7 @@ public interface TaskApi {
             AuthUserDetails principal
     );
 
-    // ✅ Метод для удаления задачи по ID
+    //  Метод для удаления задачи по ID
     @Operation(summary = "Delete Task", description = "Delete a task by ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Task successfully deleted"),
