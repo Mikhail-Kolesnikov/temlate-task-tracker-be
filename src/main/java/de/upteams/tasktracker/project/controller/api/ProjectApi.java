@@ -1,3 +1,4 @@
+
 package de.upteams.tasktracker.project.controller.api;
 
 import de.upteams.tasktracker.project.dto.ProjectDto;
@@ -16,14 +17,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Project API description for Swagger
- */
+// ✅ Добавлено: тег контроллера — используется в Swagger UI для группировки методов
 @Tag(name = "Project controller", description = "Controller for various operations with Projects")
 @RequestMapping("/api/v1/projects")
 @PreAuthorize("isAuthenticated()")
 public interface ProjectApi {
 
+    // ✅ Описание метода создания проекта и возможных ответов
     @Operation(summary = "Save Project", description = "Save new Project to the Database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Project successfully created",
@@ -39,11 +39,13 @@ public interface ProjectApi {
             )
             ProjectCreateDto newProjectDto,
 
+            // ✅ Не отображается в Swagger: авторизационный пользователь
             @AuthenticationPrincipal
             @Parameter(hidden = true)
             AuthUserDetails principal
     );
 
+    // ✅ Описание метода получения проекта по ID
     @Operation(summary = "Get Project", description = "Get one Project from the Database by its ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Project found",
@@ -57,6 +59,7 @@ public interface ProjectApi {
             String id
     );
 
+    // ✅ Описание метода получения всех проектов
     @Operation(summary = "Get all Projects", description = "Get all Projects from the Database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "All Projects list",
@@ -65,6 +68,7 @@ public interface ProjectApi {
     @GetMapping
     List<ProjectDto> getAll();
 
+    // ✅ Описание метода обновления проекта
     @Operation(summary = "Update Project", description = "Update existed Project in the Database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Project successfully updated"),
@@ -81,6 +85,7 @@ public interface ProjectApi {
             ProjectDto project
     );
 
+    // ✅ Описание метода удаления проекта по ID
     @Operation(summary = "Delete Project", description = "Delete Project from the Database by its ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Project successfully deleted"),
