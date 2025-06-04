@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c6692e26-ceaf-42ee-8f5e-244e4f558644" name="Changes" comment="Update DB name format and add Docker Compose setup&#10;&#10;Renamed database name in application-dev.yml to align with convention. Added a Docker Compose configuration for local MySQL setup with health checks and persistent storage, streamlining development workflows.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/TaskTrackerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/entity/Collaborator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/entity/Collaborator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/entity/ProjectRoles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/persistence/CollaboratorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/service/impl/CollaboratorServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/collaborator/service/interfaces/CollaboratorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/AwsS3Config.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/AwsS3Configuration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/FreemarkerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/MailConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/configuration/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/exception/handling/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/exception/handling/exceptions/common/RestApiException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/exception/handling/response/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/exception/handling/response/ValidationErrorDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/files/uploading/FileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/files/uploading/FileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/logging/AspectLogging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/EmailSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/TemplateEngine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/confirmation/code/ConfirmationCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/confirmation/code/ConfirmationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/confirmation/code/interfaces/ConfirmationCodeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/confirmation/code/interfaces/ConfirmationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/exception/EmailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/exception/EmailSendingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/exception/TemplateNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/mail/exception/TemplateProcessingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/controller/ProjectController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/controller/api/ProjectApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/dto/ProjectDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/dto/request/ProjectCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/entity/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/exception/ProjectNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/persistence/ProjectRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/service/impl/ProjectServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/service/interfaces/ProjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/project/utils/ProjectMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/constants/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/controller/AuthApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/controller/TestAuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/dto/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/entities/RefreshRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/entities/TokenResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/filter/JwtTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/handler/CustomAccessDeniedHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/handler/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/handler/ErrorResponseWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/handler/RestAuthenticationEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/service/AuthUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/service/CookieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/service/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/security/service/JwtTokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/controller/TaskController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/controller/api/TaskApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/dto/TaskDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/entity/Task.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/exception/TaskNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/persistence/TaskRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/service/impl/TaskServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/service/interfaces/TaskService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/task/utils/TaskMappingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/controller/impl/RegisterControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/controller/impl/UserControllerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/controller/interfaces/RegisterControllerApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/controller/interfaces/UserApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/controller/interfaces/UserApiSwaggerDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/dto/EmployeeDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/dto/RoleDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/dto/request/UserCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/dto/response/UserCreateResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/dto/response/UserResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/entity/AppUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/entity/ConfirmationStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/entity/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/exception/UserAlreadyExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/exception/UserConfirmationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/exception/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/persistence/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/service/impl/UserRegisterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/user/util/AppUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/utils/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/utils/EntityId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/utils/EntityUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/validation/ValidationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/upteams/tasktracker/validation/ValidationConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mail_templates/confirm_registration_mail.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/upteams/entity/EntityValidationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/upteams/tasktracker/security/service/JwtTokenServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/upteams/tasktracker/task/validation/TaskValidationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/upteams/tasktracker/user/util/AppUserMapperTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="tasktracker" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2y0XjVTwkuq01hoRAtXkvZn4mra" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "featuret/tt-2__collaborator-validation-refactor",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6692e26-ceaf-42ee-8f5e-244e4f558644" name="Changes" comment="Update DB name format and add Docker Compose setup&#10;&#10;Renamed database name in application-dev.yml to align with convention. Added a Docker Compose configuration for local MySQL setup with health checks and persistent storage, streamlining development workflows." />
+      <created>1748972599396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748972599396</updated>
+      <workItem from="1748972600498" duration="3929000" />
+      <workItem from="1748977329083" duration="504000" />
+      <workItem from="1748977847281" duration="5481000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update DB name format and add Docker Compose setup&#10;&#10;Renamed database name in application-dev.yml to align with convention. Added a Docker Compose configuration for local MySQL setup with health checks and persistent storage, streamlining development workflows." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update DB name format and add Docker Compose setup&#10;&#10;Renamed database name in application-dev.yml to align with convention. Added a Docker Compose configuration for local MySQL setup with health checks and persistent storage, streamlining development workflows." />
+  </component>
+</project>

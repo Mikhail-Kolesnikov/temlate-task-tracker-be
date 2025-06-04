@@ -1,50 +1,40 @@
 package de.upteams.tasktracker.collaborator.entity;
 
-import de.upteams.tasktracker.project.entity.Project;
-import de.upteams.tasktracker.task.entity.Task;
-import de.upteams.tasktracker.user.entity.AppUser;
-import de.upteams.tasktracker.utils.BaseEntity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.HashSet;
+import jakarta.validation.constraints.*;
+import de.upteams.tasktracker.validation.ValidationConstants;
 import java.util.Set;
 
-import static de.upteams.tasktracker.utils.EntityUtil.getIdForToString;
-import static de.upteams.tasktracker.utils.EntityUtil.getIdsForToString;
-
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-public class Collaborator extends BaseEntity {
+@Table(name = "collaborator")
+public class Collaborator {
 
-    @NotNull
-    @ManyToOne
-    private AppUser appUser;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull(message = "{collaborator.id.notNull}")
+    private Long id;
 
-    @NotNull
-    @ManyToOne
-    private Project project;
+    @NotNull(message = "{collaborator.userId.notNull}")
+    @Column(name = "app_user_id")
+    private Long appUserId;
 
-    @NotNull
+    @NotNull(message = "{collaborator.projectId.notNull}")
+    @Column(name = "project_id")
+    private Long projectId;
+
+    @NotNull(message = "{collaborator.roles.notNull}")
+    @Size(max = ValidationConstants.COLLABORATOR_ROLES_MAX, message = "{collaborator.roles.size}")
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "collaborator_roles", joinColumns = @JoinColumn(name = "collaborator_id"))
     @Enumerated(EnumType.STRING)
-    private final Set<ProjectRoles> projectRolesSet = new HashSet<>();
+    private Set<ProjectRoles> projectRolesSet;
 
-    @ManyToMany
-    private final Set<Task> tasks = new HashSet<>();
-
-    @Override
-    public String toString() {
-        return "Collaborator{" +
-                "id=" + id +
-                ", tasks=" + getIdsForToString(tasks) +
-                ", projectRolesSet=" + projectRolesSet +
-                ", project=" + getIdForToString(project) +
-                ", appUserId=" + getIdForToString(appUser) +
-                '}';
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public Long getAppUserId() { return appUserId; }
+    public void setAppUserId(Long appUserId) { this.appUserId = appUserId; }
+    public Long getProjectId() { return projectId; }
+    public void setProjectId(Long projectId) { this.projectId = projectId; }
+    public Set<ProjectRoles> getProjectRolesSet() { return projectRolesSet; }
+    public void setProjectRolesSet(Set<ProjectRoles> projectRolesSet) { this.projectRolesSet = projectRolesSet; }
 }
